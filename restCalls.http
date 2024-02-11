@@ -1,0 +1,81 @@
+#Create New Account
+POST https://my-api-gateway-t.herokuapp.com/Account/create
+Content-Type: application/json
+
+{
+  "accepted": true,
+  "accountNumber": "FULLOFCASH",
+  "balance": 10000,
+  "currency": "string",
+  "deleted": false,
+  "enabled": true,
+  "type": "SAVING",
+  "userId": "61d49aa49a397467188850ec"
+}
+
+###
+
+#Update Existing Account
+PUT https://my-account-service.herokuapp.com/Account/update
+Content-Type: application/json
+
+{
+  "accepted": true,
+  "accountNumber": "12345667",
+  "balance": 5000,
+  "creationDate": "2022-01-01T21:08:33.022Z",
+  "currency": "EURO",
+  "deleted": false,
+  "enabled": true,
+  "id": "string",
+  "type": "NORMAL",
+  "userId": "61d05f3423873875cbfbfba2"
+}
+
+###
+#Add Card to account
+PUT https://my-account-service.herokuapp.com/Account/addCard
+Content-Type: application/json
+
+{
+  "cardId": "FLSTS",
+  "accountId": "string"
+
+}
+
+###
+#Fetch accounts Of User
+GET https://my-account-service-t.herokuapp.com/Account/getUserAccounts?userId=61d49aa49a397467188850ec
+Accept: application/json
+
+
+###
+#Get Single account
+GET https://my-account-service.herokuapp.com/Account/get?id=61d09a209ad2f503dd8ba2b1
+Accept: application/json
+
+###
+#Get Single account By Account Number
+https://my-account-service.herokuapp.com/Account/getByAccountNumber?accountNumber=12345667
+Accept: application/json
+
+
+###
+GET http://localhost:8080/Account/getByAccountNumber?accountNumber=61d5a78a814720430e6d6b3f
+Accept: application/json
+
+
+###
+#Fetch All Accounts
+GET https://my-account-service.herokuapp.com/Account/getAll
+Accept: application/json
+
+###
+#Enable Account ## disable Account ## delete Account ## accept Account
+POST http://localhost:8080/Account/enable
+Content-Type: application/json
+
+{
+  "id": "61d0d1b987d7762ce82ef596"
+}
+
